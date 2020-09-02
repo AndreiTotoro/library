@@ -6,27 +6,8 @@ function Book(name, author, nrPages){
     this.nrPages = nrPages
 }
 
-function addBookToLibrary(){
-    name = prompt("What's the books name?")
-    author = prompt("What's the author's name?")
-    nrPages = prompt("How many pages does this book have?")
-    andrewsLibrary.push(name = new Book(name, author, nrPages)) 
-}
-
-const container = document.querySelector("#container")
-const submitButton = document.querySelector("#submitButton")
-const tracker = document.querySelector('#tracker')
-const trackerText = document.querySelector('#tracker')
-let bookCount = 0;
-
-
-trackerText.textContent = "You don't have any books in your library, add some!"
-
-
-
-submitButton.addEventListener("click", () => {
-    addBookToLibrary()
-
+function addBookToLibrary(name, author, nrPages){
+    andrewsLibrary.push(new Book(name, author, nrPages)) 
     const div = document.createElement("div")
     const bookName = document.createElement("h1")
     const bookAuthor = document.createElement("h2")
@@ -41,15 +22,15 @@ submitButton.addEventListener("click", () => {
     readButton.setAttribute("class", "readButton")
 
     bookName.textContent = andrewsLibrary[bookCount].name
-    bookAuthor.textContent = "By: " + andrewsLibrary[bookCount].author
+    bookAuthor.textContent = "-" + andrewsLibrary[bookCount].author + "-"
     bookPages.textContent = "Number of pages: " + andrewsLibrary[bookCount].nrPages
     readButton.textContent = "Read"
     delButton.textContent = "Remove Book"
 
     delButton.addEventListener("click", () => {
         container.removeChild(div)
-        bookCount = bookCount - 1
-        trackerText.textContent = "You have a total of: " + (bookCount - 1) + " books in your library!"
+        bookNumber--
+        trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
     })
 
     readButton.addEventListener("click", () => {
@@ -70,8 +51,9 @@ submitButton.addEventListener("click", () => {
 
     })
 
+    bookNumber++
     bookCount++
-    trackerText.textContent = "You have a total of: " + (bookCount) + " books in your library!"
+    trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
    
 
     container.appendChild(div)
@@ -82,8 +64,32 @@ submitButton.addEventListener("click", () => {
     buttons.appendChild(readButton)
     buttons.appendChild(delButton)
 
-})
+
+}
+
+const container = document.querySelector("#container")
+const submitButton = document.querySelector("#submitButton")
+const tracker = document.querySelector('#tracker')
+const trackerText = document.querySelector('#tracker')
+let bookCount = 0;
+let bookNumber = 0;
+
+
+trackerText.textContent = "You don't have any books in your library, add some!"
 
 
 
+submitButton.addEventListener("click", () => {
+    name = prompt("What's the books name?")
+    author = prompt("What's the author's name?")
+    nrPages = prompt("How many pages does this book have?")
+    addBookToLibrary(name, author, nrPages)
+   })
 
+
+
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 526)
+addBookToLibrary("Harry Potter", "J.K Rowling", 441)
+addBookToLibrary("A Game of Thrones", "G.R.R Martin", 947)
+addBookToLibrary("Warrior Cats", "Erin Hunter", 324)
+addBookToLibrary("Survivors", "Erin Hunter", 291)
