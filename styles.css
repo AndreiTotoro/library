@@ -1,21 +1,34 @@
-.container{
-    text-align: center;
-     margin: 20vh auto;
+body{
+    background-color: #326da8;
 }
 
-button{
-    padding: 10vh;
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #203952;
 }
 
-#libraryBtn2{
-    padding-right: 12.4vh;
-    padding-left: 12.4vh;
+nav button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-size: 2.5vh;
+    border: 0;
+    border-radius: 20px;
+    background-color: #004991;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
+nav button:hover{
+    background-color: #0075e8;
+}
 
-.cont{
-    border: red solid;
-    display: block;
-    margin-right: 400px;
-    margin-left: 400px;
+nav h1{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 5vh;
+    margin-bottom: 10px;
+    color: white;   
 }

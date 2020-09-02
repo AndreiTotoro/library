@@ -13,7 +13,14 @@ function addBookToLibrary(){
     totosLibrary.push(name = new Book(name, author, nrPages)) 
 }
 
-const btn1 =  document.querySelector("#libraryBtn1")
+
+
+
+
+
+
+
+/* const btn1 =  document.querySelector("#libraryBtn1")
 const btn2 = document.querySelector("#libraryBtn2")
 const text = document.querySelector("#text")
 btn1.addEventListener('click', () => {
@@ -32,7 +39,6 @@ btn2.addEventListener('click', () => {
         const nrPagesi = document.createElement('h1')
         const div = document.createElement('div')
 
-        namei.textContent = ""
         div.setAttribute("class", "cont")
         namei.textContent = "Book name: " + totosLibrary[i].name
         authori.textContent = "Author's Name: " + totosLibrary[i].author
