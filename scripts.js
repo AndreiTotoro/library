@@ -21,56 +21,40 @@ submitButton.addEventListener("click", () => {
     addBookToLibrary()
 
     const div = document.createElement("div")
-    div.setAttribute("class", "books")
     const bookName = document.createElement("h1")
-    const bookAuthor = document.createElement("h1")
-    const bookPages = document.createElement("h1")
+    const bookAuthor = document.createElement("h2")
+    const bookPages = document.createElement("h3")
+    const delButton = document.createElement("button")
+    const readButton = document.createElement("button")
+    const buttons = document.createElement("div")
 
-    bookName.textContent = "Book name: " + andrewsLibrary[bookCount].name
-    bookAuthor.textContent = "Author's Name: " + andrewsLibrary[bookCount].author
+    div.setAttribute("class", "books")
+    buttons.setAttribute("class", "buttons")
+    delButton.setAttribute("class", "delButton")
+    readButton.setAttribute("class", "readButton")
+
+    bookName.textContent = andrewsLibrary[bookCount].name
+    bookAuthor.textContent = "By: " + andrewsLibrary[bookCount].author
     bookPages.textContent = "Number of pages: " + andrewsLibrary[bookCount].nrPages
+    readButton.textContent = "Read"
+    delButton.textContent = "Remove Book"
+
+    delButton.addEventListener("click", () => {
+        container.removeChild(div)
+        bookCount--
+    })
 
     container.appendChild(div)
     div.appendChild(bookName)
     div.appendChild(bookAuthor)
     div.appendChild(bookPages)
+    div.appendChild(buttons)
+    buttons.appendChild(readButton)
+    buttons.appendChild(delButton)
+
 
     bookCount++
 
 })
 
 
-
-
-
-
-/* const btn1 =  document.querySelector("#libraryBtn1")
-const btn2 = document.querySelector("#libraryBtn2")
-const text = document.querySelector("#text")
-btn1.addEventListener('click', () => {
-    addBookToLibrary()
-})
-
-
-btn2.addEventListener('click', () => {
-    const container = document.querySelector("#container")
-    const libraryName = document.createElement('h1')
-    libraryName.textContent = "Your library: "
-    container.appendChild(libraryName)
-    for (i = 0; i < totosLibrary.length; i++){
-        const namei = document.createElement('h1')
-        const authori = document.createElement('h1')
-        const nrPagesi = document.createElement('h1')
-        const div = document.createElement('div')
-
-        div.setAttribute("class", "cont")
-        namei.textContent = "Book name: " + totosLibrary[i].name
-        authori.textContent = "Author's Name: " + totosLibrary[i].author
-        nrPagesi.textContent = "Number of pages: " + totosLibrary[i].nrPages
-
-        container.appendChild(div)
-        div.appendChild(namei);
-        div.appendChild(authori);
-        div.appendChild(nrPagesi);
-    }
-}) */
