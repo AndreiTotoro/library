@@ -132,17 +132,32 @@ nav h1{
 
 @media only screen and (max-width: 1100px) {
     .books{
-        width: 100%;
+        width: 85%;
+    }
+    nav button{
+        font-size: 2.2vh;
+        
+    }
+    .delButton{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .readButton{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .books h1{
+        padding-bottom: 1vh;
     }
   }
 
-  @media only screen and (min-width: 1100px) {
+  @media only screen and (min-width: 1300px) {
       .books{
           width: 40%;
       }
   }
 
-  @media only screen and (min-width: 1500px) {
+  @media only screen and (min-width: 1800px) {
     .books{
         width: 25vw;
     }
