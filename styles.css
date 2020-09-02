@@ -161,7 +161,7 @@ nav h1{
     }
   }
 
-  @media only screen and (min-width: 1300px) {
+  @media only screen and (min-width: 1101px) {
       .books{
           width: 40%;
       }
