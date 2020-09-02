@@ -149,6 +149,10 @@ nav h1{
     .books h1{
         padding-bottom: 1vh;
     }
+    nav{
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
   }
 
   @media only screen and (min-width: 1300px) {
