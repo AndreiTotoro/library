@@ -32,3 +32,23 @@ nav h1{
     margin-bottom: 10px;
     color: white;   
 }
+
+.books{
+    color: white;
+    font-size: 3vh;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 150px;
+    background-color: #004991;
+    border-radius: 10px;
+    width: 25vw;
+}
+
+#container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}

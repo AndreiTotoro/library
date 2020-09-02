@@ -1,4 +1,4 @@
-let totosLibrary = [];
+let andrewsLibrary = [];
 
 function Book(name, author, nrPages){
     this.name = name
@@ -10,10 +10,34 @@ function addBookToLibrary(){
     name = prompt("What's the books name?")
     author = prompt("What's the author's name?")
     nrPages = prompt("How many pages does this book have?")
-    totosLibrary.push(name = new Book(name, author, nrPages)) 
+    andrewsLibrary.push(name = new Book(name, author, nrPages)) 
 }
 
+const container = document.querySelector("#container")
+const submitButton = document.querySelector("#submitButton")
+let bookCount = 0;
 
+submitButton.addEventListener("click", () => {
+    addBookToLibrary()
+
+    const div = document.createElement("div")
+    div.setAttribute("class", "books")
+    const bookName = document.createElement("h1")
+    const bookAuthor = document.createElement("h1")
+    const bookPages = document.createElement("h1")
+
+    bookName.textContent = "Book name: " + andrewsLibrary[bookCount].name
+    bookAuthor.textContent = "Author's Name: " + andrewsLibrary[bookCount].author
+    bookPages.textContent = "Number of pages: " + andrewsLibrary[bookCount].nrPages
+
+    container.appendChild(div)
+    div.appendChild(bookName)
+    div.appendChild(bookAuthor)
+    div.appendChild(bookPages)
+
+    bookCount++
+
+})
 
 
 
@@ -49,4 +73,4 @@ btn2.addEventListener('click', () => {
         div.appendChild(authori);
         div.appendChild(nrPagesi);
     }
-})
+}) */
