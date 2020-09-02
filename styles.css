@@ -62,7 +62,15 @@ nav h1{
     flex-wrap: wrap;
 }
 
-
+#tracker{
+    background-color: #0c4966;
+    color: white;
+    font-size: 2vh;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
 
 .delButton{
     border-radius: 15px;
@@ -89,6 +97,19 @@ nav h1{
     width: 35%;
     background-color: #3c6b49;
     color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.notreadButton{
+    border-radius: 15px;
+    border: 0;
+    font-size: 0.8em;
+    width: 35%;
+    background-color: yellow;
+    color: black;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;

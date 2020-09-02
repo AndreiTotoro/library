@@ -15,7 +15,14 @@ function addBookToLibrary(){
 
 const container = document.querySelector("#container")
 const submitButton = document.querySelector("#submitButton")
+const tracker = document.querySelector('#tracker')
+const trackerText = document.querySelector('#tracker')
 let bookCount = 0;
+
+
+trackerText.textContent = "You don't have any books in your library, add some!"
+
+
 
 submitButton.addEventListener("click", () => {
     addBookToLibrary()
@@ -44,6 +51,27 @@ submitButton.addEventListener("click", () => {
         bookCount--
     })
 
+    readButton.addEventListener("click", () => {
+        if (readButton.getAttribute("class") == "readButton") {
+            div.style.backgroundColor = "green"
+            readButton.textContent = "Not Read"
+            readButton.removeAttribute("class", "readButton")
+            readButton.setAttribute("class", "notreadButton")
+        }
+        else {
+            div.style.backgroundColor = "#004991"
+            readButton.textContent = "Read"
+            readButton.removeAttribute("class", "notreadButton")
+            readButton.setAttribute("class", "readButton")
+        }
+
+        
+
+    })
+
+    
+    trackerText.textContent = "You have a total of: " + (bookCount + 1) + " books in your library!"
+    
     container.appendChild(div)
     div.appendChild(bookName)
     div.appendChild(bookAuthor)
@@ -51,10 +79,14 @@ submitButton.addEventListener("click", () => {
     div.appendChild(buttons)
     buttons.appendChild(readButton)
     buttons.appendChild(delButton)
+    tracker.appendChild(trackerText) 
 
+    
 
     bookCount++
 
 })
+
+
 
 
