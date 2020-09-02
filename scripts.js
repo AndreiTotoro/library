@@ -48,8 +48,8 @@ submitButton.addEventListener("click", () => {
 
     delButton.addEventListener("click", () => {
         container.removeChild(div)
-        bookCount--
-        trackerText.textContent = "You have a total of: " + (bookCount) + " books in your library!"
+        bookCount = bookCount - 1
+        trackerText.textContent = "You have a total of: " + (bookCount - 1) + " books in your library!"
     })
 
     readButton.addEventListener("click", () => {
@@ -70,9 +70,10 @@ submitButton.addEventListener("click", () => {
 
     })
 
-    
-    trackerText.textContent = "You have a total of: " + (bookCount + 1) + " books in your library!"
-    
+    bookCount++
+    trackerText.textContent = "You have a total of: " + (bookCount) + " books in your library!"
+   
+
     container.appendChild(div)
     div.appendChild(bookName)
     div.appendChild(bookAuthor)
@@ -80,10 +81,6 @@ submitButton.addEventListener("click", () => {
     div.appendChild(buttons)
     buttons.appendChild(readButton)
     buttons.appendChild(delButton)
-
-    
-
-    bookCount++
 
 })
 
