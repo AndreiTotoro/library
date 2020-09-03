@@ -43,7 +43,7 @@ function addBookToLibrary(name, author, nrPages){
         bookNumber--
         totalPages = totalPages - nrPages
         trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
-        trackerText2.textContent = "You have read a total of " + totalPages + " pages!"
+        trackerText2.textContent = "Your books have in total " + totalPages + " pages!"
     })
 
     readButton.addEventListener("click", () => {
@@ -68,7 +68,7 @@ function addBookToLibrary(name, author, nrPages){
     bookNumber++
     bookCount++
     trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
-    trackerText2.textContent = "You have read a total of " + totalPages + " pages!"
+    trackerText2.textContent = "Your books have in total " + totalPages + " pages!"
 
     container.appendChild(div)
     div.appendChild(bookName)
