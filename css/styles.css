@@ -53,6 +53,7 @@ nav h1{
 .books h1{
     margin-top: 10vh;
     font-weight: bold;
+    padding-bottom: 0.8vh;
 }
 
 .books h2{
