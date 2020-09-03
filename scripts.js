@@ -1,4 +1,13 @@
 let andrewsLibrary = [];
+const container = document.querySelector("#container")
+const submitButton = document.querySelector("#submitButton")
+const tracker = document.querySelector('#tracker')
+const trackerText = document.querySelector('#trackerText')
+const trackerText2 = document.querySelector('#trackerText2')
+
+let bookCount = 0;
+let bookNumber = 0;
+let totalPages = 0;
 
 function Book(name, author, nrPages){
     this.name = name
@@ -27,10 +36,14 @@ function addBookToLibrary(name, author, nrPages){
     readButton.textContent = "Read"
     delButton.textContent = "Remove Book"
 
+    totalPages = totalPages + nrPages
+
     delButton.addEventListener("click", () => {
         container.removeChild(div)
         bookNumber--
+        totalPages = totalPages - nrPages
         trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
+        trackerText2.textContent = "You have read a total of " + totalPages + " pages!"
     })
 
     readButton.addEventListener("click", () => {
@@ -51,10 +64,11 @@ function addBookToLibrary(name, author, nrPages){
 
     })
 
+
     bookNumber++
     bookCount++
     trackerText.textContent = "You have a total of: " + bookNumber + " books in your library!"
-   
+    trackerText2.textContent = "You have read a total of " + totalPages + " pages!"
 
     container.appendChild(div)
     div.appendChild(bookName)
@@ -67,12 +81,7 @@ function addBookToLibrary(name, author, nrPages){
 
 }
 
-const container = document.querySelector("#container")
-const submitButton = document.querySelector("#submitButton")
-const tracker = document.querySelector('#tracker')
-const trackerText = document.querySelector('#tracker')
-let bookCount = 0;
-let bookNumber = 0;
+
 
 
 trackerText.textContent = "You don't have any books in your library, add some!"
@@ -82,8 +91,9 @@ trackerText.textContent = "You don't have any books in your library, add some!"
 submitButton.addEventListener("click", () => {
     name = prompt("What's the books name?")
     author = prompt("What's the author's name?")
-    nrPages = prompt("How many pages does this book have?")
+    nrPages = parseInt(prompt("How many pages does this book have?")) 
     addBookToLibrary(name, author, nrPages)
+    
    })
 
 
